@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- App name -->
+    <string name="app_name">Movie Finder</string>
+
+    <!-- movie_item.xml -->
+    <string name="content_description">Movie posters</string>
+
+    <!-- activity_detail.xml -->
+    <string name="backdrop_desc">Backdrop image</string>
+
+    <!-- movie_menu.xml -->
+    <string name="refresh">Refresh</string>
+    <string name="popular">Home (Popular movies)</string>
+    <string name="top_rated">Top rated movies</string>
+    <string name="favorites">Favorite movies</string>
+
+    <!-- sort by -->
+    <string name="sort_by">Sort by</string>
+
+    <!-- trailer_item.xml -->
+    <string name="video_thumbnail">Video thumbnail</string>
+
+    <!-- activity_detail_content.xml -->
+    <string name="trailers">Trailers</string>
+    <string name="like">Did you liked the movie? Click the LikeButton to save it!</string>
+
+
+    <!-- For java code -->
+    <string name="movie_data_unavailable">Movie data unavailable...</string>
+    <string name="double_press_back">Please, press back again to exit.</string>
+
+</resources>
