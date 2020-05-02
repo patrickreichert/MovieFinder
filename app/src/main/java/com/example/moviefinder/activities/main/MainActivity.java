@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity
         else
         {
             toolbar.setTitle(R.string.app_name);
-            Toast.makeText(this, "Check your network connection first!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Check your network connection first!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity
         setKey(getString(R.string.popular));
         this.doubleBackToExitPressedOnce = true;
 
-        Toast.makeText(this, R.string.double_press_back, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), R.string.double_press_back, Toast.LENGTH_SHORT).show();
         new Handler().postDelayed(new Runnable()
         {
             @Override

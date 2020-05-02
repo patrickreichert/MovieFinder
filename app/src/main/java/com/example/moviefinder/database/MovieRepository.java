@@ -27,7 +27,7 @@ public class MovieRepository
         mFavMovies = mDao.getAllMovies();
     }
 
-    //  for favorites
+    // For favourites
     public LiveData<List<Movie>> getFavMovies() {
         return mFavMovies;
     }
@@ -54,7 +54,7 @@ public class MovieRepository
         return mDao.getMovieById(id);
     }
 
-    //for network
+    // For internet connections
     public LiveData<List<Movie>> getMoviesFromNetwork(String sortType, String apiKey) {
         return apiServices.getMovies(sortType, apiKey);
     }

@@ -127,13 +127,13 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
             public void liked(LikeButton likeButton)
             {
                 detailViewModel.saveMovie(movie);
-                Toast.makeText(context, "Added " + movie.getOriginalTitle() + " to favorites!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Added " + movie.getOriginalTitle() + " to favorites!", Toast.LENGTH_SHORT).show();
             }
             @Override
             public void unLiked(LikeButton likeButton)
             {
                 detailViewModel.deleteMovie(movie);
-                Toast.makeText(context, "Removed " + movie.getOriginalTitle() + " to favorites!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Removed " + movie.getOriginalTitle() + " to favorites!", Toast.LENGTH_SHORT).show();
             }
         });
     }
