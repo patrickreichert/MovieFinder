@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:text="Movie name:"
+            android:text="Original movie name:"
             android:textSize="20dp"
             android:textStyle="italic"
             app:layout_constraintBottom_toTopOf="@id/titleTv"

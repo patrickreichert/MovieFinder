@@ -1,4 +1,4 @@
-package com.example.moviefinder.activities;
+package com.example.moviefinder.network;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -16,8 +16,8 @@ public class AppExecutors
     private static final Object LOCK = new Object();
     private static AppExecutors sInstance;
     private final Executor diskIO;
-    private final Executor mainThread;
     private final Executor networkIO;
+    private final Executor mainThread;
 
     private AppExecutors(Executor diskIO, Executor networkIO, Executor mainThread)
     {
@@ -49,16 +49,6 @@ public class AppExecutors
     public Executor diskIO()
     {
         return diskIO;
-    }
-
-    public Executor mainThread()
-    {
-        return mainThread;
-    }
-
-    public Executor networkIO()
-    {
-        return networkIO;
     }
 
     private static class MainThreadExecutor implements Executor

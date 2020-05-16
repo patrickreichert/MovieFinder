@@ -4,7 +4,7 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.moviefinder.activities.AppExecutors;
+import com.example.moviefinder.network.AppExecutors;
 import com.example.moviefinder.model.movie.Movie;
 import com.example.moviefinder.model.trailer.Trailer;
 import com.example.moviefinder.network.ApiServices;
@@ -25,6 +25,19 @@ public class MovieRepository
         MovieDB db = MovieDB.getDatabase(application);
         mDao = db.movieDAO();
         mFavMovies = mDao.getAllMovies();
+    }
+
+    public LiveData<Movie> getMovieById(int id) {
+        return mDao.getMovieById(id);
+    }
+
+    // For internet connections
+    public LiveData<List<Movie>> getMoviesFromNetwork(String sortType, String apiKey) {
+        return apiServices.getMovies(sortType, apiKey);
+    }
+
+    public LiveData<List<Trailer>> getTrailers(Integer id, String apiKey) {
+        return apiServices.getTrailers(id, apiKey);
     }
 
     // For favourites
@@ -49,18 +62,4 @@ public class MovieRepository
             }
         });
     }
-
-    public LiveData<Movie> getMovieById(int id) {
-        return mDao.getMovieById(id);
-    }
-
-    // For internet connections
-    public LiveData<List<Movie>> getMoviesFromNetwork(String sortType, String apiKey) {
-        return apiServices.getMovies(sortType, apiKey);
-    }
-
-    public LiveData<List<Trailer>> getTrailers(Integer id, String apiKey) {
-        return apiServices.getTrailers(id, apiKey);
-    }
 }
-

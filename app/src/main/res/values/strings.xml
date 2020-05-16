@@ -25,7 +25,6 @@
     <string name="trailers">Trailers</string>
     <string name="like">Did you liked the movie? Click the LikeButton to save it!</string>
 
-
     <!-- For java code -->
     <string name="movie_data_unavailable">Movie data unavailable...</string>
     <string name="double_press_back">Please, press back again to exit.</string>
