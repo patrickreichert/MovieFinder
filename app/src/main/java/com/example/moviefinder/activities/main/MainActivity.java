@@ -35,8 +35,8 @@ import com.example.moviefinder.adapters.MovieAdapter;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
 
 /**
  * MainActivity class
@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity
     public final static String LIST_STATE_KEY = "recycler_list_state";
     private static final String PREF = "pref";
 
-    @BindView(R.id.coordinator_layout)
+    //@BindView(R.id.coordinator_layout)
     CoordinatorLayout coordinatorLayout;
-    @BindView(R.id.toolbar)
+    //@BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.progress_bar)
+    //@BindView(R.id.progress_bar)
     ProgressBar progressBar;
-    @BindView(R.id.movieRecyclerView)
+    //@BindView(R.id.movieRecyclerView)
     RecyclerView movieRecyclerView;
 
     private String apikey = ApiConstants.API_KEY;
@@ -75,7 +75,11 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.bind(this);
+        //ButterKnife.bind(this);
+        coordinatorLayout = findViewById(R.id.coordinator_layout);
+        toolbar = findViewById(R.id.toolbar);
+        progressBar = findViewById(R.id.progress_bar);
+        movieRecyclerView = findViewById(R.id.movieRecyclerView);
 
         // Inizializzo le views
         initViews(savedInstanceState);

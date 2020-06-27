@@ -31,8 +31,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
 
 /**
  * DetailsActivity class
@@ -43,21 +43,21 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
 
     private String apiKey = ApiConstants.API_KEY;
 
-    @BindView(R.id.titleTv)
+    //@BindView(R.id.titleTv)
     TextView titleTv;
-    @BindView(R.id.release_date)
+    //@BindView(R.id.release_date)
     TextView dateTv;
-    @BindView(R.id.overview)
+    //@BindView(R.id.overview)
     TextView overviewTv;
-    @BindView(R.id.main_backdrop)
+    //@BindView(R.id.main_backdrop)
     ImageView backdropIv;
-    @BindView(R.id.movie_rating)
+    //@BindView(R.id.movie_rating)
     RatingBar ratingBar;
-    @BindView(R.id.main_toolbar)
+    //@BindView(R.id.main_toolbar)
     Toolbar toolbar;
-    @BindView(R.id.trailer_rv)
+    //@BindView(R.id.trailer_rv)
     RecyclerView trailerView;
-    @BindView(R.id.detail_coordinator)
+    //@BindView(R.id.detail_coordinator)
     CoordinatorLayout coordinatorLayout;
 
     String title, date, overview, backdrop, poster;
@@ -75,7 +75,16 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        ButterKnife.bind(this);
+        //ButterKnife.bind(this);
+        titleTv = findViewById(R.id.titleTv);
+        dateTv = findViewById(R.id.release_date);
+        overviewTv = findViewById(R.id.overview);
+        backdropIv = findViewById(R.id.main_backdrop);
+        ratingBar = findViewById(R.id.movie_rating);
+        toolbar = findViewById(R.id.main_toolbar);
+        trailerView = findViewById(R.id.trailer_rv);
+        coordinatorLayout = findViewById(R.id.detail_coordinator);
+
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();

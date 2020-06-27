@@ -15,8 +15,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
 
 /**
  * Trailer adapter
@@ -83,14 +83,15 @@ public class TrailerAdapter extends RecyclerView.Adapter<TrailerAdapter.TrailerH
     class TrailerHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
 
-        @BindView(R.id.trailer_IV)
+        //@BindView(R.id.trailer_IV)
         ImageView trailerView;
 
         private TrailerHolder(View itemView)
         {
             super(itemView);
 
-            ButterKnife.bind(this, itemView);
+            //ButterKnife.bind(this, itemView);
+            trailerView = itemView.findViewById(R.id.trailer_IV);
             itemView.setOnClickListener(this);
         }
 
