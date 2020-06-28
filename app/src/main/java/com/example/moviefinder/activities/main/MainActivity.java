@@ -311,10 +311,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    // Vado alla relativa scheda di dettaglio
     @Override
-    public void onListClick(Movie movie)
+    public void onListClick(final Movie movie)
     {
-        Intent movieIntent = new Intent(this.getApplicationContext(), DetailsActivity.class);
+        Intent movieIntent = new Intent(getApplicationContext(), DetailsActivity.class);
         movieIntent.putExtra(DetailsActivity.EXTRA_VALUE, movie);
         startActivity(movieIntent);
     }

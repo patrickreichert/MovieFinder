@@ -39,4 +39,10 @@
         <item name="android:itemBackground">@color/colorPrimary</item>
         <item name="titleTextColor">@android:color/white</item>
     </style>
+
+    <!-- AlertDialog application theme -->
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 </resources>

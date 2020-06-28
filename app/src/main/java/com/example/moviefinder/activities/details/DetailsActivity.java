@@ -2,6 +2,7 @@ package com.example.moviefinder.activities.details;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -212,9 +214,28 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
         final String url = "https://www.youtube.com/watch?v=";
         final String key = trailer.getKey();
 
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url + key));
-        startActivity(intent);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
+        builder.
+                setTitle("Vuoi andare a vedere questo trailer sull'app YouTube?")
+                .setCancelable(true).setNegativeButton("No", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i)
+                        {
+                            //TODO: nothing
+                        }
+                    })
+                .setPositiveButton("Si", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setData(Uri.parse(url + key));
+                            startActivity(intent);
+                        }
+                    })
+                .show();
     }
 
     private void closeOnError()
