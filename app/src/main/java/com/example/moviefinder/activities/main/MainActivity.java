@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity
         mainViewModel.getFavMovies().observe(this, new Observer<List<Movie>>()
         {
             @Override
-            public void onChanged(@Nullable List<Movie> movies)
+            public void onChanged(@Nullable final List<Movie> movies)
             {
                 movieAdapter.setMovieItem(movies);
                 progressBar.setVisibility(View.GONE);

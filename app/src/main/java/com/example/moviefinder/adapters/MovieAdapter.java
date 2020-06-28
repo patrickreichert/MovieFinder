@@ -23,9 +23,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 {
     private List<Movie> mMovies;
     final private ListClickListener mListClickListener;
-    //final private ListLongClickListener mListLongClickListener;
     private Context context;
     private MovieViewHolder holder;
+
 
     public MovieAdapter(Context context, ListClickListener onListClickListener)
     {

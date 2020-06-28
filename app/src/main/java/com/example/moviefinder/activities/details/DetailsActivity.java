@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.moviefinder.R;
+import com.example.moviefinder.activities.main.MainActivity;
 import com.example.moviefinder.model.movie.Movie;
 import com.example.moviefinder.model.trailer.Trailer;
 import com.example.moviefinder.network.ApiConstants;
@@ -124,13 +125,19 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
             {
                 detailViewModel.saveMovie(movie);
                 Toast.makeText(getApplicationContext(), "Added " + movie.getOriginalTitle() + " to favorites!", Toast.LENGTH_SHORT).show();
+
+                Intent likedIntent = new Intent(DetailsActivity.this, MainActivity.class);
+                startActivity(likedIntent);
+                finish();
             }
             @Override
             public void unLiked(LikeButton likeButton)
             {
                 detailViewModel.deleteMovie(movie);
                 Toast.makeText(getApplicationContext(), "Removed " + movie.getOriginalTitle() + " to favorites!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(DetailsActivity.this, MainActivity.class));
+
+                Intent unLikedIntent = new Intent(DetailsActivity.this, MainActivity.class);
+                startActivity(unLikedIntent);
                 finish();
             }
         });
