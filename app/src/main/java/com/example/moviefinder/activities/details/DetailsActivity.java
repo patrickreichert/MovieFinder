@@ -14,7 +14,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -31,9 +30,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-//import butterknife.BindView;
-//import butterknife.ButterKnife;
-
 /**
  * DetailsActivity class
  */
@@ -43,21 +39,13 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
 
     private String apiKey = ApiConstants.API_KEY;
 
-    //@BindView(R.id.titleTv)
     TextView titleTv;
-    //@BindView(R.id.release_date)
     TextView dateTv;
-    //@BindView(R.id.overview)
     TextView overviewTv;
-    //@BindView(R.id.main_backdrop)
     ImageView backdropIv;
-    //@BindView(R.id.movie_rating)
     RatingBar ratingBar;
-    //@BindView(R.id.main_toolbar)
     Toolbar toolbar;
-    //@BindView(R.id.trailer_rv)
     RecyclerView trailerView;
-    //@BindView(R.id.detail_coordinator)
     CoordinatorLayout coordinatorLayout;
 
     String title, date, overview, backdrop, poster;
@@ -75,7 +63,6 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        //ButterKnife.bind(this);
         titleTv = findViewById(R.id.titleTv);
         dateTv = findViewById(R.id.release_date);
         overviewTv = findViewById(R.id.overview);
@@ -143,6 +130,8 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
             {
                 detailViewModel.deleteMovie(movie);
                 Toast.makeText(getApplicationContext(), "Removed " + movie.getOriginalTitle() + " to favorites!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(DetailsActivity.this, MainActivity.class));
+                finish();
             }
         });
     }
