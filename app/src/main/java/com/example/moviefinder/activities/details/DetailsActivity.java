@@ -216,7 +216,7 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
         builder.
-                setTitle("Vuoi andare a vedere questo trailer sull'app YouTube?")
+                setTitle("Would you like to see this trailer on YouTube's app?")
                 .setCancelable(true).setNegativeButton("No", new DialogInterface.OnClickListener()
                     {
                         @Override
@@ -225,7 +225,7 @@ public class DetailsActivity extends AppCompatActivity implements TrailerAdapter
                             //TODO: nothing
                         }
                     })
-                .setPositiveButton("Si", new DialogInterface.OnClickListener()
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
                     {
                         @Override
                         public void onClick(DialogInterface dialog, int which)
